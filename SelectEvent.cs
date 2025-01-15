@@ -14,8 +14,6 @@ namespace PTiraz
 {
     public partial class SelectEvent : Form
     {
-        public static string SERVERNAME ;
-        public static void SetServerName(string serverName) {  SERVERNAME = serverName; }
         public SelectEvent()
         {
             InitializeComponent();
@@ -24,7 +22,7 @@ namespace PTiraz
         }
         public void ShowEventList()
         {
-            string connectionString = GlobalV.MagicHead + SERVERNAME + GlobalV.MagicWord;
+            string connectionString = GlobalV.MagicHead + GlobalV.ServerName + GlobalV.MagicWord;
             string sqlQuery = "select * from 大会設定";
             listEvent.Items.Clear();
 

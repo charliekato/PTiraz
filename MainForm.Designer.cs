@@ -33,13 +33,15 @@
             lblClassGender = new Label();
             lblDistanceStyle = new Label();
             label1 = new Label();
+            lblCurrentTime = new Label();
+            lblRaceNo = new Label();
             SuspendLayout();
             // 
             // lblCurrentRace
             // 
             lblCurrentRace.AutoSize = true;
             lblCurrentRace.Font = new Font("ＭＳ Ｐ明朝", 28.125F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            lblCurrentRace.Location = new Point(263, 59);
+            lblCurrentRace.Location = new Point(621, 43);
             lblCurrentRace.Name = "lblCurrentRace";
             lblCurrentRace.Size = new Size(458, 75);
             lblCurrentRace.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             lblClassGender.AutoSize = true;
             lblClassGender.Font = new Font("ＭＳ Ｐ明朝", 48F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            lblClassGender.Location = new Point(197, 229);
+            lblClassGender.Location = new Point(197, 262);
             lblClassGender.Name = "lblClassGender";
             lblClassGender.Size = new Size(679, 128);
             lblClassGender.TabIndex = 1;
@@ -60,7 +62,7 @@
             // 
             lblDistanceStyle.AutoSize = true;
             lblDistanceStyle.Font = new Font("ＭＳ Ｐ明朝", 48F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            lblDistanceStyle.Location = new Point(216, 390);
+            lblDistanceStyle.Location = new Point(216, 411);
             lblDistanceStyle.Name = "lblDistanceStyle";
             lblDistanceStyle.Size = new Size(635, 128);
             lblDistanceStyle.TabIndex = 2;
@@ -78,11 +80,34 @@
             label1.TabIndex = 3;
             label1.Text = "大津市水泳協会　加藤美孝";
             // 
+            // lblCurrentTime
+            // 
+            lblCurrentTime.AutoSize = true;
+            lblCurrentTime.Font = new Font("Yu Gothic UI", 20F);
+            lblCurrentTime.Location = new Point(1487, 11);
+            lblCurrentTime.Name = "lblCurrentTime";
+            lblCurrentTime.Size = new Size(138, 72);
+            lblCurrentTime.TabIndex = 4;
+            lblCurrentTime.Text = "時刻";
+            // 
+            // lblRaceNo
+            // 
+            lblRaceNo.AutoSize = true;
+            lblRaceNo.Font = new Font("ＭＳ Ｐ明朝", 48F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            lblRaceNo.Location = new Point(197, 118);
+            lblRaceNo.Name = "lblRaceNo";
+            lblRaceNo.Size = new Size(690, 128);
+            lblRaceNo.TabIndex = 5;
+            lblRaceNo.Text = "競技番号 : ";
+            lblRaceNo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1764, 622);
+            Controls.Add(lblRaceNo);
+            Controls.Add(lblCurrentTime);
             Controls.Add(label1);
             Controls.Add(lblDistanceStyle);
             Controls.Add(lblClassGender);
@@ -99,6 +124,8 @@
         private Label lblClassGender;
         private Label lblDistanceStyle;
         private Label label1;
+        private Label lblCurrentTime;
+        private Label lblRaceNo;
     }
 
 }

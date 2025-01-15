@@ -7,6 +7,17 @@ namespace PTiraz
         {
             InitializeComponent();
         }
+        private void SelectServer_Load(object sender,EventArgs e)
+        {
+            tbxServerName.Focus();
+        }
+        private void tbxServerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnOK.PerformClick();
+            }
+        }
         private void btnQuit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -16,7 +27,6 @@ namespace PTiraz
             if (ServerAccessOK(tbxServerName.Text))
             {
                 GlobalV.ServerName = tbxServerName.Text;
-                SelectEvent.SetServerName(tbxServerName.Text);
 
                 SelectEvent selEventForm = new SelectEvent();
                 selEventForm.Show();
@@ -53,12 +63,5 @@ namespace PTiraz
             }
         }
 
-        public static class GlobalV
-        {
-            public const string MagicWord = "\\SQLEXPRESS;Encrypt=True;TrustServerCertificate=True;";
-            public const string MagicHead = "Persist Security Info=False;User ID=Sw;Password=;Initial Catalog=Sw;Server=";
-            public static int EventNo;
-            public static string ServerName = string.Empty;
-        }
     }
 }

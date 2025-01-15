@@ -1,20 +1,43 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTiraz", "PTiraz.csproj", "{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PTirazInstaller", "..\PTirazInstaller\PTirazInstaller.vdproj", "{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|ARM32.Build.0 = Debug|ARM32
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|x64.ActiveCfg = Debug|x64
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Debug|x64.Build.0 = Debug|x64
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|ARM32.ActiveCfg = Release|ARM32
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|ARM32.Build.0 = Release|ARM32
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|x64.ActiveCfg = Release|x64
+		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|x64.Build.0 = Release|x64
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Debug|Any CPU.ActiveCfg = Debug
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Debug|ARM32.ActiveCfg = Debug
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Debug|ARM32.Build.0 = Debug
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Debug|x64.ActiveCfg = Debug
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Release|Any CPU.ActiveCfg = Release
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Release|ARM32.ActiveCfg = Release
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Release|ARM32.Build.0 = Release
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Release|x64.ActiveCfg = Release
+		{B94CCC66-1319-4A7F-8B9C-1B07215CAE00}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

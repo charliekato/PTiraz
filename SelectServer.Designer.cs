@@ -49,6 +49,7 @@
             tbxServerName.Name = "tbxServerName";
             tbxServerName.Size = new Size(397, 39);
             tbxServerName.TabIndex = 2;
+            tbxServerName.KeyDown += tbxServerName_KeyDown;
             // 
             // btnQuit
             // 
@@ -70,6 +71,7 @@
             Controls.Add(btnOK);
             Name = "SelectServer";
             Text = "サーバーの選択";
+            Load += SelectServer_Load;
             ResumeLayout(false);
             PerformLayout();
         }
