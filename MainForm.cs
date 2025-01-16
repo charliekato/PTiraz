@@ -21,17 +21,20 @@ namespace PTiraz
         private void AddEndTime()
         {
             string sql = @"
-                IF NOT EXISTS (
-                    SELECT 1 
-                    FROM INFORMATION_SCHEMA.COLUMNS 
-                    WHERE TABLE_NAME = 'プログラム' 
-                      AND COLUMN_NAME = '終了時刻'
-                )
-                BEGIN
-                    ALTER TABLE プログラム
-                    ADD 終了時刻 NVARCHAR(5) NULL;
-                END;
-                ";
+               IF NOT EXISTS (
+    SELECT * 
+    FROM sysobjects 
+    WHERE name = '時間経過' 
+      AND xtype = 'U'
+)
+BEGIN
+    CREATE TABLE 時間経過 (
+        大会番号 INT NOT NULL,
+        競技番号 INT NOT NULL,
+        時刻 NVARCHAR(5) NULL,
+        PRIMARY KEY (大会番号, 競技番号)
+    );
+END; ";
             try
             {
                 using (SqlConnection conn = new SqlConnection(GlobalV.MagicHead + GlobalV.ServerName + GlobalV.MagicWord))
@@ -56,14 +59,19 @@ namespace PTiraz
             timer.Tick += DispTime;
             timer.Start();
 
-            AddEndTime();
+            //AddEndTime();
 
         }
         private void RecordCurrentTime(int raceNo)
         {
+            if (raceNo == 0) return;
             string currentTime = DateTime.Now.ToString("HH:mm");
-            string sql = " UPDATE プログラム Set 終了時刻 = @Endtime " +
-                " Where 大会番号=@EventNo AND 競技番号=@RaceNo";
+            /*
+            string sql = "UPDATE プログラム SET 時間 = '@Endtime'" +
+                      " WHERE 大会番号=  @EventNo and 表示用競技番号= @RaceNo ";
+            */
+            string sql = "UPdate プログラム set 時間= '" + currentTime +"' " + 
+                "where 大会番号=" + GlobalV.EventNo + "  and 表示用競技番号=" + raceNo;
 
             try
             {
@@ -72,9 +80,11 @@ namespace PTiraz
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
+                        /*
                         cmd.Parameters.AddWithValue("@EndTime", currentTime);
                         cmd.Parameters.AddWithValue("@EventNo", GlobalV.EventNo);
                         cmd.Parameters.AddWithValue("@RaceNo", raceNo);
+                        */
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -134,9 +144,9 @@ namespace PTiraz
         }
         private static int GetCurrentPrgNo()
         {
-            string sqlQuery = "select 表示用競技番号 as 競技番号, 進行フラグ  from プログラム " +
+            string sqlQuery = "select 表示用競技番号 , 進行フラグ  from プログラム " +
                 " where 大会番号 = " + GlobalV.EventNo +
-                " Order by 競技番号";
+                " Order by 表示用競技番号";
             SqlConnection connection = null;
             try
             {
@@ -150,7 +160,7 @@ namespace PTiraz
                         {
                             while (reader.Read())
                             {
-                                if (Convert.ToInt32(reader["進行フラグ"]) == 1) return Convert.ToInt32(reader["競技番号"]);
+                                if (Convert.ToInt32(reader["進行フラグ"]) == 1) return Convert.ToInt32(reader["表示用競技番号"]);
 
                             }
                         }
