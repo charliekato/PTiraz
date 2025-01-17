@@ -17,6 +17,7 @@ namespace PTiraz
         int oldRaceNo = 0;
         int lastDistance = 0;
 
+        static string[] Gender = { "", "男子", "女子", "混成", "混合" };
         private System.Windows.Forms.Timer timer;
         private void AddEndTime()
         {
@@ -100,9 +101,8 @@ END; ";
         private void DispNextRace(int raceNo)
         {
             int thisDistance;
-            string sqlQuery = "select 表示用競技番号, クラス.クラス名称, 性別.性別, 距離.距離, 種目.種目 from"
+            string sqlQuery = "select 表示用競技番号, クラス.クラス名称, プログラム.性別コード , 距離.距離, 種目.種目 from"
                 + " プログラム inner join クラス on プログラム.クラス番号 = クラス.クラス番号"
-                + " inner join 性別 on 性別.性別コード=プログラム.性別コード "
                 + " inner join 距離 on 距離.距離コード = プログラム.距離コード"
                 + " inner join 種目 on 種目.種目コード = プログラム.種目コード "
                 + " where クラス.大会番号= @EventNo "
@@ -119,7 +119,7 @@ END; ";
                     {
                         reader.Read();
                         lblRaceNo.Text = "競技番号 : " + reader["表示用競技番号"];
-                        lblClassGender.Text = "" + reader["クラス名称"] + " " + reader["性別"];
+                        lblClassGender.Text = "" + reader["クラス名称"] + " " + Gender[Convert.ToInt32(reader["性別コード"])];
                         string distanceString = "" + reader["距離"];
                         thisDistance =Convert.ToInt32( distanceString.Substring(0, 4));
                         lblDistanceStyle.Text = "" + distanceString + " " + reader["種目"];
@@ -135,6 +135,16 @@ END; ";
         private void DispRace(object sender, EventArgs e) {
 
             int raceNo = GetCurrentPrgNo();
+            if (raceNo == 0)
+            {
+                timer.Tick -= DispRace;
+                timer.Tick -= DispTime;
+                timer.Stop();
+                MessageBox.Show("すべてのレース終了しました。");
+                this.Close();
+
+                return;
+            }
             if (oldRaceNo != raceNo)
             {
                 RecordCurrentTime(oldRaceNo);
