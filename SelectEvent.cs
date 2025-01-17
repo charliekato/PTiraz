@@ -120,6 +120,7 @@ namespace PTiraz
                 GlobalV.EventNo = Int32.Parse(selectedItem.ToString().Substring(0, 3));
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
+                this.Hide();
 
             }
             else
