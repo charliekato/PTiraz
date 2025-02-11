@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTiraz", "PTiraz.csproj", "{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PTHelper", "PTHelper\PTHelper.vdproj", "{32F48B47-E92C-4432-AA1D-B0565AF08AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +29,12 @@ Global
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|ARM32.Build.0 = Release|ARM32
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|x64.ActiveCfg = Release|x64
 		{B1B054BF-5BCD-496D-9DBD-7B1818BE50CB}.Release|x64.Build.0 = Release|x64
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Debug|Any CPU.ActiveCfg = Debug
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Debug|ARM32.ActiveCfg = Debug
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Debug|x64.ActiveCfg = Debug
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Release|Any CPU.ActiveCfg = Release
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Release|ARM32.ActiveCfg = Release
-		{BD7B12C6-9AE1-4B57-AD9F-B5896560792E}.Release|x64.ActiveCfg = Release
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Debug|Any CPU.ActiveCfg = Debug
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Debug|ARM32.ActiveCfg = Debug
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Debug|x64.ActiveCfg = Debug
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Release|Any CPU.ActiveCfg = Release
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Release|ARM32.ActiveCfg = Release
+		{32F48B47-E92C-4432-AA1D-B0565AF08AAF}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
